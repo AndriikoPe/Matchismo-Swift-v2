@@ -22,10 +22,6 @@
 
 @implementation CardGameViewController
 
-+ (NSUInteger)maxFlipCount {
-    return 104; //52 * 2
-}
-
 - (Deck *)deck {
     if (!_deck) _deck = [[PlayingCardDeck alloc] init];
     return _deck;
@@ -50,11 +46,12 @@
         [sender setBackgroundImage:[UIImage imageNamed:@"cardFront"]
                           forState:UIControlStateNormal];
         NSString *title;
-        if (self.flipCount < [CardGameViewController maxFlipCount]) {
-            self.card = [self.deck drawRandomCard];
-            title = [self.card contents];
+        Card *randomCard = [self.deck drawRandomCard];
+        if (randomCard) {
+            title = [randomCard contents];
         } else {
             title = @"0 cards left";
+            sender.enabled = NO;
         }
         sender.titleLabel.textAlignment = NSTextAlignmentCenter;
         [sender setTitle:title forState:UIControlStateNormal];
