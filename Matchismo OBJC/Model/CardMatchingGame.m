@@ -50,28 +50,43 @@ static const int COST_TO_CHOOSE = 1;
 
 - (void)chooseCardAtIndex:(NSUInteger)index {
     Card *card = [self cardAtIndex:index];
-    
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen =  NO;
         } else {
+            NSMutableArray *otherCards = [[NSMutableArray alloc] init];
             for (Card *otherCard in self.cards) {
                 if (!otherCard.isMatched && otherCard.isChosen) {
-                    int matchScore = [card match: @[otherCard]];
-                    if (matchScore) {
-                        self.score += matchScore * MATCH_BONUS;
-                        card.matched = YES;
-                        otherCard.matched = YES;
-                    } else {
-                        self.score -= MISMATCH_PENALTY;
-                        otherCard.chosen = NO;
+                    [otherCards addObject:otherCard];
+                    if ([otherCards count] == self.numberOfCardMatchingMode - 1) {
+                        int matchScore = [card match: otherCards];
+                        if (matchScore) {
+                            self.score += matchScore * MATCH_BONUS;
+                            card.matched = YES;
+                            [self markMatchedCards:otherCards];
+                        } else {
+                            self.score -= MISMATCH_PENALTY * (pow(self.numberOfCardMatchingMode - 1, 3)); //bigger mismatch penalty when mismatched more cards. If we got a 2 card game,pow(1, n) returns 1
+                            [self unchooseCards:otherCards];
+                        }
+                        break;
                     }
-                    break;
                 }
             }
-            self.score -= COST_TO_CHOOSE;
+            self.score -= COST_TO_CHOOSE * (self.numberOfCardMatchingMode - 1); // again, the cost is bigger when awards are bigger
             card.chosen = YES;
         }
+    }
+}
+
+- (void)unchooseCards:(NSArray *)cards {
+    for (Card *card in cards) {
+        card.chosen = NO;
+    }
+}
+
+- (void)markMatchedCards:(NSArray *)cards {
+    for (Card *card in cards) {
+        card.matched = YES;
     }
 }
 

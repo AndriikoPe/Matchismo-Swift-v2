@@ -10,17 +10,48 @@
 
 @implementation PlayingCard
 
+
+//some constants that we can change if we come up with a better counting algorithm
+static const int MATCHED_2_CARDS_RANKS = 8;
+static const int MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE = 6;
+static const int MATCHED_3_CARDS_RANKS = 18;
+static const int MATCHED_2_CARDS_SUITS = 2;
+static const int MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE = 1;
+static const int MATCHED_3_CARDS_SUITS = 8;
+
 - (int)match:(NSArray *)otherCards {
     int score = 0;
     if ([otherCards count] == 1) {
         PlayingCard *otherCard = [otherCards firstObject];
         if (otherCard.rank == self.rank) {
-            score = 4;
+            score = MATCHED_2_CARDS_RANKS;
         } else if ([otherCard.suit isEqualToString:self.suit]) {
-            score = 1;
+            score = MATCHED_2_CARDS_SUITS;
         }
+    } else if ([otherCards count] == 2) {
+        PlayingCard *firstOtherCard = [otherCards firstObject];
+        PlayingCard *secondOtherCard = [otherCards lastObject];
+        int suitScore = 0;
+        int rankScore = 0;
+        if ([self.suit isEqualToString:firstOtherCard.suit] || [self.suit isEqualToString:secondOtherCard.suit]) {
+            suitScore += MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE;
+        }
+        if ([firstOtherCard.suit isEqualToString:secondOtherCard.suit]) {
+            suitScore = suitScore ? MATCHED_3_CARDS_SUITS : MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE;
+        }
+        
+        if (self.rank == firstOtherCard.rank || self.rank == secondOtherCard.rank) {
+            rankScore += MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE;
+        }
+        if (firstOtherCard.rank == secondOtherCard.rank) {
+            rankScore = rankScore ? MATCHED_3_CARDS_RANKS : MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE;
+        }
+        if (suitScore && rankScore) { // both are not 0
+            score = suitScore * rankScore;
+        } else {
+            score = suitScore + rankScore; // one of them is 0, so just returning second
+        }                                  // if there is no match, they are still both 0
     }
-    
     return score;
 }
 
