@@ -46,11 +46,7 @@ static const int MATCHED_3_CARDS_SUITS = 8;
         if (firstOtherCard.rank == secondOtherCard.rank) {
             rankScore = rankScore ? MATCHED_3_CARDS_RANKS : MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE;
         }
-        if (suitScore && rankScore) { // both are not 0
-            score = suitScore * rankScore;
-        } else {
-            score = suitScore + rankScore; // one of them is 0, so just returning second
-        }                                  // if there is no match, they are still both 0
+        score = suitScore + rankScore; // if no match, both are 0
     }
     return score;
 }

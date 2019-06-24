@@ -49,6 +49,7 @@ static const int COST_TO_CHOOSE = 1;
 
 
 - (void)chooseCardAtIndex:(NSUInteger)index {
+    self.matchDesctiption = @""; //removing description whenever a new card is chosen
     Card *card = [self cardAtIndex:index];
     if (!card.isMatched) {
         if (card.isChosen) {
@@ -60,14 +61,22 @@ static const int COST_TO_CHOOSE = 1;
                     [otherCards addObject:otherCard];
                     if ([otherCards count] == self.numberOfCardMatchingMode - 1) {
                         int matchScore = [card match: otherCards];
+                        NSString *description;
+                        description = [self cardsContents:otherCards];
+                        description = [description stringByAppendingString:card.contents]; //description is now all the cards involved in a match
                         if (matchScore) {
-                            self.score += matchScore * MATCH_BONUS;
+                            matchScore *= MATCH_BONUS;
+                            self.score += matchScore;
                             card.matched = YES;
                             [self markMatchedCards:otherCards];
                         } else {
-                            self.score -= MISMATCH_PENALTY * (pow(self.numberOfCardMatchingMode - 1, 3)); //bigger mismatch penalty when mismatched more cards. If we got a 2 card game,pow(1, n) returns 1
+                            matchScore = -(MISMATCH_PENALTY * (pow(self.numberOfCardMatchingMode - 1, 3)));
+                            self.score -= matchScore; //bigger mismatch penalty when mismatched more cards. If we got a 2 card game,pow(1, n) returns 1
                             [self unchooseCards:otherCards];
                         }
+                        self.matchDesctiption = matchScore > 0 ?
+                        ([NSString stringWithFormat:@"Matched %@ for %d points", description, matchScore]) :
+                        ([NSString stringWithFormat: @"%@ is a mismatch! %d penalty", description, matchScore]);
                         break;
                     }
                 }
@@ -76,6 +85,14 @@ static const int COST_TO_CHOOSE = 1;
             card.chosen = YES;
         }
     }
+}
+
+- (NSString *)cardsContents:(NSArray *)cards {
+    NSString *contents = @"";
+    for (Card *card in cards) {
+        contents = [contents stringByAppendingString:card.contents];
+    }
+    return contents;
 }
 
 - (void)unchooseCards:(NSArray *)cards {

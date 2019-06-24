@@ -14,21 +14,19 @@
         <!--Card Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="CardGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5ZA-5i-u2q">
-                                <rect key="frame" x="20" y="44" width="375" height="616"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5ZA-5i-u2q">
+                                <rect key="frame" x="16" y="44" width="382" height="628"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZXA-Bf-RpG">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="E2M-g5-jNG">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +36,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GWV-dX-JMv">
-                                                <rect key="frame" x="76.666666666666686" y="0.0" width="68.333333333333314" height="96"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +46,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yzB-QF-PmL">
-                                                <rect key="frame" x="153" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,7 +56,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-cP-Jd8">
-                                                <rect key="frame" x="229.66666666666666" y="0.0" width="68.666666666666657" height="96"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,7 +66,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Coe-fH-7Vm">
-                                                <rect key="frame" x="306.33333333333331" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="98"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Coe-fH-7Vm" secondAttribute="height" multiplier="5:7" id="H9y-uS-BfU"/>
                                                 </constraints>
@@ -83,10 +81,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="saH-W2-01C">
-                                        <rect key="frame" x="0.0" y="104" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="106" width="382" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-fm-7XV">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,7 +94,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uGE-G6-pdu">
-                                                <rect key="frame" x="76.666666666666686" y="0.0" width="68.333333333333314" height="96"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,7 +104,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PDF-Ho-Igc">
-                                                <rect key="frame" x="153" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,7 +114,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sM8-oj-9QT">
-                                                <rect key="frame" x="229.66666666666666" y="0.0" width="68.666666666666657" height="96"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,7 +124,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-Ze-sAM">
-                                                <rect key="frame" x="306.33333333333331" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,10 +136,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-wv-AWD">
-                                        <rect key="frame" x="0.0" y="208" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="212" width="382" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kax-9t-lAq">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,7 +149,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bZS-NS-y9u">
-                                                <rect key="frame" x="76.666666666666686" y="0.0" width="68.333333333333314" height="96"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +159,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iSr-26-aXt">
-                                                <rect key="frame" x="153" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,7 +169,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Dqh-4M-XPi">
-                                                <rect key="frame" x="229.66666666666666" y="0.0" width="68.666666666666657" height="96"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,7 +179,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="glW-hF-Yam">
-                                                <rect key="frame" x="306.33333333333331" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,10 +191,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-J0-CEB">
-                                        <rect key="frame" x="0.0" y="312" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="318" width="382" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ybn-BA-V5d">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,7 +204,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uNf-Xb-10f">
-                                                <rect key="frame" x="76.666666666666686" y="0.0" width="68.333333333333314" height="96"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -216,7 +214,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yn2-lP-lc4">
-                                                <rect key="frame" x="153" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,7 +224,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8sm-4O-MQm">
-                                                <rect key="frame" x="229.66666666666666" y="0.0" width="68.666666666666657" height="96"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -236,7 +234,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-bb-ana">
-                                                <rect key="frame" x="306.33333333333331" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,10 +246,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="egL-XA-yRl">
-                                        <rect key="frame" x="0.0" y="416" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="424" width="382" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9dg-M4-ASj">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,7 +259,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iXg-rn-Zyj">
-                                                <rect key="frame" x="76.666666666666686" y="0.0" width="68.333333333333314" height="96"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -271,7 +269,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="F1W-br-oFg">
-                                                <rect key="frame" x="153" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -281,7 +279,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kAq-xT-CTN">
-                                                <rect key="frame" x="229.66666666666666" y="0.0" width="68.666666666666657" height="96"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -291,7 +289,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ydS-PC-ate">
-                                                <rect key="frame" x="306.33333333333331" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -303,10 +301,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-fo-LeR">
-                                        <rect key="frame" x="0.0" y="520" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="530" width="382" height="98"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="LQp-ZB-0T0">
-                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -316,7 +314,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zCc-jW-iB5">
-                                                <rect key="frame" x="76.666666666666686" y="0.0" width="68.333333333333314" height="96"/>
+                                                <rect key="frame" x="78" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,7 +324,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sF8-kH-iRL">
-                                                <rect key="frame" x="153" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="156" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,7 +334,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-Sb-Vsh">
-                                                <rect key="frame" x="229.66666666666666" y="0.0" width="68.666666666666657" height="96"/>
+                                                <rect key="frame" x="234" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -346,7 +344,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PkU-q6-5zO">
-                                                <rect key="frame" x="306.33333333333331" y="0.0" width="68.666666666666686" height="96"/>
+                                                <rect key="frame" x="312" y="0.0" width="70" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <state key="normal" backgroundImage="cardBack">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -382,25 +380,43 @@
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DH3-Wy-dGs">
                                 <rect key="frame" x="69.666666666666686" y="775" width="275" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="7Lz-Ly-a5v"/>
+                                </constraints>
                                 <segments>
                                     <segment title="2-card-match mode"/>
                                     <segment title="3-card-match mode"/>
                                 </segments>
                                 <color key="tintColor" red="0.58059096336364746" green="0.91637593507766724" blue="0.91441947221755981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EJ-Ll-MPp">
+                                <rect key="frame" x="16" y="767" width="382" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5ZA-5i-u2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="398-ul-rAX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xLV-V7-fNp" secondAttribute="bottom" id="8Si-SY-z3B"/>
+                            <constraint firstAttribute="trailing" secondItem="5ZA-5i-u2q" secondAttribute="trailing" constant="16" id="GVZ-0z-ejp"/>
+                            <constraint firstItem="DH3-Wy-dGs" firstAttribute="top" secondItem="8EJ-Ll-MPp" secondAttribute="bottom" constant="8" symbolic="YES" id="MAL-Hc-D0d"/>
                             <constraint firstItem="xLV-V7-fNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MSo-pu-1cO"/>
+                            <constraint firstItem="8EJ-Ll-MPp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Nrk-Fk-EzW"/>
+                            <constraint firstItem="5ZA-5i-u2q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="QRd-ZO-VU6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xLV-V7-fNp" secondAttribute="trailing" id="Uo8-AG-aKd"/>
                             <constraint firstItem="DH3-Wy-dGs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XLL-0z-5Th"/>
+                            <constraint firstItem="DH3-Wy-dGs" firstAttribute="top" secondItem="5ZA-5i-u2q" secondAttribute="bottom" priority="750" constant="103" id="b0i-SG-vhE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8EJ-Ll-MPp" secondAttribute="trailing" constant="16" id="dji-LP-Yd8"/>
+                            <constraint firstItem="5ZA-5i-u2q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nP8-un-iXm"/>
                             <constraint firstItem="xLV-V7-fNp" firstAttribute="top" secondItem="DH3-Wy-dGs" secondAttribute="bottom" constant="8" symbolic="YES" id="yjV-Le-ho5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="gameModeSegmentedControl" destination="DH3-Wy-dGs" id="pJI-ho-DbL"/>
+                        <outlet property="matchDescriptionLabel" destination="8EJ-Ll-MPp" id="pff-aO-qiQ"/>
                         <outlet property="scoreLabel" destination="v47-Ov-8ze" id="M6o-4X-oXm"/>
                         <outletCollection property="cardButtons" destination="E2M-g5-jNG" id="MyE-hI-SlP"/>
                         <outletCollection property="cardButtons" destination="GWV-dX-JMv" id="EhO-J7-1mB"/>
@@ -434,6 +450,7 @@
                         <outletCollection property="cardButtons" destination="LQp-ZB-0T0" id="tZB-Ej-jyN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>

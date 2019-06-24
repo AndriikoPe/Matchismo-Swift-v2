@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic) NSUInteger numberOfCardMatchingMode;
+@property (strong, nonatomic) NSString *matchDesctiption;
 
 @end
 
