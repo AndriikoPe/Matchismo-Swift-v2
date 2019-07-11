@@ -17,9 +17,7 @@
 // • Add `@class MySwiftClass` to your .h files that depend on the Swift code;
 // • No need to import the Swift Bridging Header (`Matchismo_OBJC-Swift.h`), since it's already being imported from the .pch file.
 
-#import "Matchismo OBJC/Model/PlayingCard.h"
 #import "Matchismo OBJC/Model/PlayingCardDeck.h"
-#import "Matchismo OBJC/Model/CardMatchingGame.h"
 #import <UIKit/UIKit.h>
 
 // End Swiftify generated imports

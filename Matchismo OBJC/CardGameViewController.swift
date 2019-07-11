@@ -17,7 +17,7 @@ class CardGameViewController: UIViewController {
     @IBOutlet private weak var gameModeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var matchDescriptionLabel: UILabel!
 
-    private lazy var game: CardMatchingGame? = CardMatchingGame(cardCount: UInt(cardButtons!.count), using: createDeck())
+    private lazy var game: CardMatchingGame? = CardMatchingGame(cardCount: cardButtons!.count, using: createDeck())
 
     func createDeck() -> Deck {
         return PlayingCardDeck()
@@ -25,7 +25,7 @@ class CardGameViewController: UIViewController {
 
     @IBAction func newGame() {
         gameModeSegmentedControl.isEnabled = true
-        game = CardMatchingGame(cardCount: UInt(cardButtons!.count), using: createDeck())
+        game = CardMatchingGame(cardCount: cardButtons!.count, using: createDeck())
         updateView()
     }
 
@@ -34,14 +34,14 @@ class CardGameViewController: UIViewController {
         gameModeSegmentedControl.isEnabled = false
         game?.numberOfCardMatchingMode = gameModeSegmentedControl.selectedSegmentIndex != 0 ? 3 : 2
         // if selectedSegmentIndex is 0, then false => returns 2, if it is 1, then true => returns 3
-        game?.chooseCard(at: UInt(chosenButtonIndex))
+        game?.chooseCard(at: chosenButtonIndex)
         updateView()
     }
 
     func updateView() {
         for button in cardButtons {
             let cardButtonIndex = (cardButtons as NSArray).index(of: button)
-            if let card = game?.card(at: UInt(cardButtonIndex)) {
+            if let card = game?.card(at: cardButtonIndex) {
                 button.setTitle(title(for: card), for: .normal)
                 button.setBackgroundImage(backgroundImage(for: card), for: .normal)
                 button.isEnabled = !card.isMatched

@@ -7,6 +7,7 @@
 //
 
 #import "Deck.h"
+@class PlayingCard;
 
 NS_ASSUME_NONNULL_BEGIN
 
