@@ -1,7 +1,7 @@
 //  Converted to Swift 5 by Swiftify v5.0.37171 - https://objectivec2swift.com/
 //
 //  AppDelegate.swift
-//  Matchismo OBJC
+//  Matchismo
 //
 //  Created by Пермяков Андрей on 6/21/19.
 //  Copyright © 2019 Пермяков Андрей. All rights reserved.
