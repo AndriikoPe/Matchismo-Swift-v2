@@ -17,14 +17,14 @@ let MATCHED_2_CARDS_SUITS = 2
 let MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE = 1
 let MATCHED_3_CARDS_SUITS = 8
 
-@objcMembers class PlayingCard: Card {
+class PlayingCard: Card {
     private var _suit = ""
     var suit: String {
         get {
             return _suit != "" ? _suit : "?"
         }
         set(suit) {
-            if (PlayingCard.validSuits() as NSArray).contains(suit) {
+            if (PlayingCard.validSuits() as Array).contains(suit) {
                 _suit = suit
             }
         }

@@ -1,9 +1,0 @@
-//
-// Prefix header for all source files of the `Matchismo OBJC` target in the 'Matchismo OBJC' project.
-//
-#ifdef __OBJC__
-    // Added by Swiftify: import the Swift Bridging Header from the .pch file
-    // to make it accessible from all Objective-C source files.
-    // NOTE: keep this import commented out until your project contains at least one .swift file and compiles successfully.
-     #import "Matchismo_OBJC-Swift.h"
-#endif

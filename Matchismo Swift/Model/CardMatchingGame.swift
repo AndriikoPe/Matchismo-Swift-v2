@@ -21,7 +21,7 @@ class CardMatchingGame: NSObject {
         for _ in 0..<count {
             let card = deck.drawRandomCard()
             if card != nil {
-                cards.append(card)
+                cards.append(card!)
             } else {
                 return nil
             }
