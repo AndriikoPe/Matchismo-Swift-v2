@@ -10,18 +10,18 @@
 import Foundation
 
 class Card: NSObject {
-    var contents = ""
-    var isChosen = false
-    var isMatched = false
-
-    func match(_ otherCards: [Card]?) -> Int {
-        var score = 0
-
-        for card in otherCards ?? [] {
-            if (card.contents == contents) {
-                score = 1
-            }
-        }
-        return score
+  var contents = ""
+  var isChosen = false
+  var isMatched = false
+  
+  func match(_ otherCards: [Card]?) -> Int {
+    var score = 0
+    
+    for card in otherCards ?? [] {
+      if (card.contents == contents) {
+        score = 1
+      }
     }
+    return score
+  }
 }

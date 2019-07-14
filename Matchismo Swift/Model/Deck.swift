@@ -10,29 +10,24 @@
 import Foundation
 
 class Deck: NSObject {
-    func add(_ card: Card, atTop: Bool) {
-        if atTop {
-            cards.insert(card, at: 0)
-        } else {
-            cards.append(card)
-        }
+  private var cards = [Card]()
+  
+  func add(_ card: Card, atTop: Bool = false) {
+    if atTop {
+      cards.insert(card, at: 0)
+    } else {
+      cards.append(card)
     }
-
-    func add(_ card: Card) {
-        add(card, atTop: false)
+  }
+  
+  func drawRandomCard() -> Card? {
+    var randomCard: Card? = nil
+    
+    if cards.count != 0 {
+      let index = Int(arc4random()) % cards.count
+      randomCard = cards[index]
+      cards.remove(at: Int(index))
     }
-
-    func drawRandomCard() -> Card? {
-        var randomCard: Card? = nil
-
-        if cards.count != 0 {
-            let index = Int(arc4random()) % cards.count
-            randomCard = cards[index]
-            cards.remove(at: Int(index))
-        }
-        return randomCard
-    }
-
-
-    private var cards = [Card]()
+    return randomCard
+  }
 }

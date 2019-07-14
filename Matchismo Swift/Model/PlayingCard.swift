@@ -7,105 +7,95 @@
 //  Copyright © 2019 Пермяков Андрей. All rights reserved.
 //
 
-
-//some constants that we can change if we come up with a better counting algorithm
-
-let MATCHED_2_CARDS_RANKS = 8
-let MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE = 6
-let MATCHED_3_CARDS_RANKS = 18
-let MATCHED_2_CARDS_SUITS = 2
-let MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE = 1
-let MATCHED_3_CARDS_SUITS = 8
-
 class PlayingCard: Card {
-    private var _suit = ""
-    var suit: String {
-        get {
-            return _suit != "" ? _suit : "?"
-        }
-        set(suit) {
-            if (PlayingCard.validSuits() as Array).contains(suit) {
-                _suit = suit
-            }
-        }
+  private var _suit: String?
+  var suit: String {
+    get {
+      if let count = _suit?.count, count > 0 {
+        // If _suit?.count succeeded, then _suit is not nil, so _suit! is ok
+        return _suit!
+      } else {
+        return "?"
+      }
     }
-
-    private var _rank = 0
-    var rank: Int {
-        get {
-            return _rank
-        }
-        set(rank) {
-            if rank <= PlayingCard.maxRank() {
-                _rank = rank
-            }
-        }
+    set(suit) {
+      if (PlayingCard.validSuits() as Array).contains(suit) {
+        _suit = suit
+      }
     }
-
-    static func validSuits() -> [String] {
-        return ["♥", "♠", "♦", "♣"]
+  }
+  
+  private var _rank = 0
+  var rank: Int {
+    get {
+      return _rank
     }
-
-    class func maxRank() -> Int {
-        return self.rankStrings().count - 1
+    set(rank) {
+      if rank <= PlayingCard.maxRank() {
+        _rank = rank
+      }
     }
-
-    override func match(_ otherCards: [Card]?) -> Int {
-        var score = 0
-        if otherCards?.count == 1 {
-            let otherCard = otherCards?.first as? PlayingCard
-            if otherCard?.rank == rank {
-                score = MATCHED_2_CARDS_RANKS
-            } else if (otherCard?.suit == suit) {
-                score = MATCHED_2_CARDS_SUITS
-            }
-        } else if otherCards?.count == 2 {
-            let firstOtherCard = otherCards?.first as? PlayingCard
-            let secondOtherCard = otherCards?.last as? PlayingCard
-            var suitScore = 0
-            var rankScore = 0
-            if (suit == firstOtherCard?.suit) || (suit == secondOtherCard?.suit) {
-                suitScore += MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE
-            }
-            if (firstOtherCard?.suit == secondOtherCard?.suit) {
-                suitScore = suitScore != 0 ? MATCHED_3_CARDS_SUITS : MATCHED_2_CARDS_SUITS_IN_3_CARDS_MODE
-            }
-
-            if rank == firstOtherCard?.rank || rank == secondOtherCard?.rank {
-                rankScore += MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE
-            }
-            if firstOtherCard?.rank == secondOtherCard?.rank {
-                rankScore = rankScore != 0 ? MATCHED_3_CARDS_RANKS : MATCHED_2_CARDS_RANKS_IN_3_CARDS_MODE
-            }
-            score = suitScore + rankScore // if no match, both are 0
-        }
-        return score
+  }
+  
+  override var contents: String {
+    get {
+      let rankStrings = PlayingCard.rankStrings()
+      return rankStrings[rank] + suit
     }
-
-    override var contents: String {
-        get {
-            let rankStrings = PlayingCard.rankStrings()
-            return rankStrings[rank] + suit
-        }
-        set {}
+    set {}
+  }
+  
+  class func validSuits() -> [String] {
+    return ["♥", "♠", "♦", "♣"]
+  }
+  
+  class func maxRank() -> Int {
+    return self.rankStrings().count - 1
+  }
+  
+  private class func rankStrings() -> [String] {
+    return ["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+  }
+  
+  // Returns 0 if no match, positive Int otherwise
+  override func match(_ otherCards: [Card]?) -> Int {
+    var score = 0
+    if otherCards?.count == 1 {
+      let otherCard = otherCards?.first as? PlayingCard
+      if otherCard?.rank == rank {
+        score = CardMatchingBounses.twoRanks
+      } else if (otherCard?.suit == suit) {
+        score = CardMatchingBounses.twoSuits
+      }
+    } else if otherCards?.count == 2 {
+      let firstOtherCard = otherCards?.first as? PlayingCard, secondOtherCard = otherCards?.last as? PlayingCard
+      var suitScore = 0, rankScore = 0
+      if (suit == firstOtherCard?.suit) || (suit == secondOtherCard?.suit) {
+        suitScore += CardMatchingBounses.twoSuitsInThreeCardMode
+      }
+      if (firstOtherCard?.suit == secondOtherCard?.suit) {
+        suitScore = suitScore != 0 ? CardMatchingBounses.threeSuits : CardMatchingBounses.twoSuitsInThreeCardMode
+      }
+      
+      if rank == firstOtherCard?.rank || rank == secondOtherCard?.rank {
+        rankScore += CardMatchingBounses.twoRanksInThreeCardMode
+      }
+      if firstOtherCard?.rank == secondOtherCard?.rank {
+        rankScore = rankScore != 0 ? CardMatchingBounses.threeRanks : CardMatchingBounses.twoRanksInThreeCardMode
+      }
+      // If no match, both are 0
+      score = suitScore + rankScore
     }
+    return score
+  }
+}
 
-    class func rankStrings() -> [String] {
-        return [
-        "?",
-        "A",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "J",
-        "Q",
-        "K"
-        ]
-    }
+// Some constants that we can change if we come up with a better counting algorithm
+struct CardMatchingBounses {
+  static let twoRanks = 8
+  static let twoRanksInThreeCardMode = 6
+  static let threeRanks = 18
+  static let twoSuits = 2
+  static let twoSuitsInThreeCardMode = 1
+  static let threeSuits = 8
 }

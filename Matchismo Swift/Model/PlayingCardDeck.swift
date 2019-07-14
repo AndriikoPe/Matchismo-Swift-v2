@@ -8,16 +8,16 @@
 //
 
 class PlayingCardDeck: Deck {
-    override init() {
-        super.init()
-
-        for suit in PlayingCard.validSuits() {
-            for rank in 1...PlayingCard.maxRank() {
-                let card = PlayingCard()
-                card.suit = suit
-                card.rank = rank
-                add(card)
-            }
-        }
+  override init() {
+    super.init()
+    
+    for suit in PlayingCard.validSuits() {
+      for rank in 1...PlayingCard.maxRank() {
+        let card = PlayingCard()
+        card.suit = suit
+        card.rank = rank
+        add(card)
+      }
     }
+  }
 }
