@@ -25,10 +25,10 @@ class PlayingCard: Card {
     }
   }
   
-  private var _rank = 0
+  private var _rank: Int?
   var rank: Int {
     get {
-      return _rank
+      return _rank ?? 0
     }
     set(rank) {
       if rank <= PlayingCard.maxRank() {
@@ -90,7 +90,6 @@ class PlayingCard: Card {
   }
 }
 
-// Some constants that we can change if we come up with a better counting algorithm
 struct CardMatchingBounses {
   static let twoRanks = 8
   static let twoRanksInThreeCardMode = 6

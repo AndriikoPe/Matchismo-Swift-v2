@@ -29,43 +29,41 @@ class CardMatchingGame: NSObject {
   }
   
   func chooseCard(at index: Int) {
-    if let card = self.card(at: index) {
-      guard !card.isMatched else { return }
-      // Removing description whenever a new card is chosen
-      matchDesctiption = ""
-      if card.isChosen {
-        card.isChosen = false
-      } else {
-        var otherCards = [Card]()
-        for otherCard in cards {
-          if !otherCard.isMatched && otherCard.isChosen {
-            otherCards.append(otherCard)
-            // We got an arr otherCards + current card involved in a match
-            if otherCards.count == numberOfCardMatchingMode - 1 {
-              var matchScore = card.match(otherCards)
-              let cardsDescription = cardsContents(otherCards + [card])
-              if matchScore != 0 {
-                matchScore *= ScoreMultipliers.matchBonus
-                score += matchScore
-                markMatchedCards(otherCards + [card])
-              } else {
-                // Bigger mismatch penalty when mismatched more cards
-                matchScore = -(ScoreMultipliers.mismatchPenalty *
-                             Int((pow(Double(numberOfCardMatchingMode - 1), 3))))
-                score += matchScore
-                unchooseCards(otherCards)
-              }
-              matchDesctiption = matchScore > 0 ?
-                  "Matched \(cardsDescription) for \(matchScore) points" :
-                  "\(cardsDescription) is a mismatch! \(matchScore) penalty"
-              break
-            }
-          }
+    guard let card = self.card(at: index), !card.isMatched else { return }
+    matchDesctiption = ""
+    if card.isChosen {
+      card.isChosen = false
+      return
+    }
+    var otherCards: [Card] = []
+    for otherCard in cards {
+      if !otherCard.isMatched && otherCard.isChosen {
+        otherCards.append(otherCard)
+        // We got an arr otherCards + current card involved in a match
+        if (otherCards.count + 1) == numberOfCardMatchingMode {
+          var matchScore = card.match(otherCards)
+          modifyScoreInformation(&matchScore, withCards: otherCards + [card])
+          break
         }
-        // Again, the cost is bigger when rewards are bigger
-        score -= ScoreMultipliers.costToChoose * (numberOfCardMatchingMode - 1)
-        card.isChosen = true
       }
+    }
+    score -= ScoreMultipliers.costToChoose * (numberOfCardMatchingMode - 1)
+    card.isChosen = true
+  }
+  
+  private func modifyScoreInformation(_ matchScore: inout Int, withCards cards: [Card]) {
+    let cardsDescription = cardsContents(cards)
+    if matchScore != 0 {
+      matchScore *= ScoreMultipliers.matchBonus
+      score += matchScore
+      markMatchedCards(cards)
+      matchDesctiption = "Matched \(cardsDescription) for \(matchScore) points"
+    } else {
+      matchScore = -(ScoreMultipliers.mismatchPenalty *
+        Int((pow(Double(numberOfCardMatchingMode), 3))))
+      score += matchScore
+      unchooseCards(cards)
+      matchDesctiption = "\(cardsDescription) is a mismatch! \(matchScore) penalty"
     }
   }
   
