@@ -59,32 +59,50 @@ class PlayingCard: Card {
   
   // Returns 0 if no match, positive Int otherwise
   override func match(_ otherCards: [Card]?) -> Int {
+    return getScore(forRank: rank, comparingToCards: otherCards ?? []) +
+      getScore(forSuit: suit, comparingToCards: otherCards ?? [])
+  }
+  
+  private func getScore(forSuit suit: String, comparingToCards cards: [Card]) -> Int {
     var score = 0
-    if otherCards?.count == 1 {
-      let otherCard = otherCards?.first as? PlayingCard
-      if otherCard?.rank == rank {
-        score = CardMatchingBounses.twoRanks
-      } else if (otherCard?.suit == suit) {
+    switch cards.count {
+    case 1:
+      if (cards.first as? PlayingCard)?.suit == suit {
         score = CardMatchingBounses.twoSuits
       }
-    } else if otherCards?.count == 2 {
-      let firstOtherCard = otherCards?.first as? PlayingCard, secondOtherCard = otherCards?.last as? PlayingCard
-      var suitScore = 0, rankScore = 0
+    case 2:
+      let firstOtherCard = cards.first as? PlayingCard, secondOtherCard = cards.last as? PlayingCard
       if (suit == firstOtherCard?.suit) || (suit == secondOtherCard?.suit) {
-        suitScore += CardMatchingBounses.twoSuitsInThreeCardMode
+        score += CardMatchingBounses.twoSuitsInThreeCardMode
       }
       if (firstOtherCard?.suit == secondOtherCard?.suit) {
-        suitScore = suitScore != 0 ? CardMatchingBounses.threeSuits : CardMatchingBounses.twoSuitsInThreeCardMode
+        score = score != 0 ? CardMatchingBounses.threeSuits :
+          CardMatchingBounses.twoSuitsInThreeCardMode
       }
-      
+    default:
+      break
+    }
+    return score
+  }
+  
+  private func getScore(forRank rank: Int, comparingToCards cards: [Card]) -> Int {
+    var score = 0
+    switch cards.count {
+    case 1:
+      if (cards.first as? PlayingCard)?.rank == rank {
+        score = CardMatchingBounses.twoRanks
+      }
+    case 2:
+      let firstOtherCard = cards.first as? PlayingCard, secondOtherCard = cards.last as? PlayingCard
       if rank == firstOtherCard?.rank || rank == secondOtherCard?.rank {
-        rankScore += CardMatchingBounses.twoRanksInThreeCardMode
+        score += CardMatchingBounses.twoRanksInThreeCardMode
       }
       if firstOtherCard?.rank == secondOtherCard?.rank {
-        rankScore = rankScore != 0 ? CardMatchingBounses.threeRanks : CardMatchingBounses.twoRanksInThreeCardMode
+        score = score != 0 ? CardMatchingBounses.threeRanks :
+          CardMatchingBounses.twoRanksInThreeCardMode
       }
-      // If no match, both are 0
-      score = suitScore + rankScore
+    default:
+      break
     }
     return score
   }
