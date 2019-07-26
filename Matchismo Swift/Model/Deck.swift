@@ -10,7 +10,7 @@
 import Foundation
 
 class Deck: NSObject {
-  private var cards = [Card]()
+  private var cards: [Card] = []
   
   func add(_ card: Card, atTop: Bool = false) {
     if atTop {
