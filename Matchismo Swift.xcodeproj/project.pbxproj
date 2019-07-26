@@ -14,6 +14,8 @@
 		BF83148022BD55E000A786CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF83147F22BD55E000A786CC /* Assets.xcassets */; };
 		BF83148322BD55E000A786CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF83148122BD55E000A786CC /* LaunchScreen.storyboard */; };
 		BF83149822BD5CD700A786CC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83149722BD5CD700A786CC /* Card.swift */; };
+		BF93051422E8A94C007F8A83 /* CardMatchingBonuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93051322E8A94C007F8A83 /* CardMatchingBonuses.swift */; };
+		BF93051622EB14CE007F8A83 /* ScoreMultipliers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93051522EB14CE007F8A83 /* ScoreMultipliers.swift */; };
 		BFB133AF22BD5F390007EE21 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB133AE22BD5F390007EE21 /* Deck.swift */; };
 		BFF93CA422BD639B002A2E34 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF93CA322BD639B002A2E34 /* PlayingCard.swift */; };
 		BFF93CA722BD6C84002A2E34 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF93CA622BD6C84002A2E34 /* PlayingCardDeck.swift */; };
@@ -30,6 +32,8 @@
 		BF83148222BD55E000A786CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF83148422BD55E000A786CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF83149722BD5CD700A786CC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		BF93051322E8A94C007F8A83 /* CardMatchingBonuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMatchingBonuses.swift; sourceTree = "<group>"; };
+		BF93051522EB14CE007F8A83 /* ScoreMultipliers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMultipliers.swift; sourceTree = "<group>"; };
 		BFB133AE22BD5F390007EE21 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		BFF93CA322BD639B002A2E34 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		BFF93CA622BD6C84002A2E34 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
@@ -89,10 +93,12 @@
 		BFF93CA822BD7FFD002A2E34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF93051522EB14CE007F8A83 /* ScoreMultipliers.swift */,
 				BFF93CA622BD6C84002A2E34 /* PlayingCardDeck.swift */,
 				BFF93CAA22BE8E2F002A2E34 /* CardMatchingGame.swift */,
 				BFB133AE22BD5F390007EE21 /* Deck.swift */,
 				BFF93CA322BD639B002A2E34 /* PlayingCard.swift */,
+				BF93051322E8A94C007F8A83 /* CardMatchingBonuses.swift */,
 				BF83149722BD5CD700A786CC /* Card.swift */,
 			);
 			path = Model;
@@ -169,8 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF93051422E8A94C007F8A83 /* CardMatchingBonuses.swift in Sources */,
 				BFB133AF22BD5F390007EE21 /* Deck.swift in Sources */,
 				BFF93CA422BD639B002A2E34 /* PlayingCard.swift in Sources */,
+				BF93051622EB14CE007F8A83 /* ScoreMultipliers.swift in Sources */,
 				BF83147B22BD55DF00A786CC /* CardGameViewController.swift in Sources */,
 				BFF93CAB22BE8E2F002A2E34 /* CardMatchingGame.swift in Sources */,
 				BFF93CA722BD6C84002A2E34 /* PlayingCardDeck.swift in Sources */,

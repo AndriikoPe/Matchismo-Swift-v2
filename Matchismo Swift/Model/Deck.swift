@@ -23,7 +23,7 @@ class Deck: NSObject {
   func drawRandomCard() -> Card? {
     var randomCard: Card? = nil
     
-    if cards.count != 0 {
+    if cards.count > 0 {
       let index = Int(arc4random()) % cards.count
       randomCard = cards[index]
       cards.remove(at: Int(index))

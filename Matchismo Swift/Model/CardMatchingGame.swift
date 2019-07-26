@@ -15,14 +15,11 @@ class CardMatchingGame: NSObject {
   private(set) var matchDesctiption = ""
   private var cards: [Card]
   
-  // Designated initializer
   init?(cardCount count: Int, using deck: Deck) {
     cards = []
     for _ in 0..<count {
       let card = deck.drawRandomCard()
-      guard card != nil else {
-        return nil
-      }
+      guard card != nil else { return nil }
       // Use non-optional `card` further in the code
       cards.append(card!)
     }
@@ -90,10 +87,4 @@ class CardMatchingGame: NSObject {
       card.isMatched = true
     }
   }
-}
-
-struct ScoreMultipliers {
-  static let mismatchPenalty = 2
-  static let matchBonus = 4
-  static let costToChoose = 1
 }

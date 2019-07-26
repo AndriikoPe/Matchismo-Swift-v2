@@ -11,15 +11,14 @@ class PlayingCard: Card {
   private var _suit: String?
   var suit: String {
     get {
-      if let count = _suit?.count, count > 0 {
-        // If _suit?.count succeeded, then _suit is not nil, so _suit! is ok
-        return _suit!
+      if let _suit = _suit, _suit.count > 0 {
+        return _suit
       } else {
         return "?"
       }
     }
     set(suit) {
-      if (PlayingCard.validSuits() as Array).contains(suit) {
+      if PlayingCard.validSuits().contains(suit) {
         _suit = suit
       }
     }
@@ -58,24 +57,28 @@ class PlayingCard: Card {
   }
   
   // Returns 0 if no match, positive Int otherwise
-  override func match(_ otherCards: [Card]?) -> Int {
-    return getScore(forRank: rank, comparingToCards: otherCards ?? []) +
-      getScore(forSuit: suit, comparingToCards: otherCards ?? [])
+  override func match(_ otherCards: [Card]) -> Int {
+    guard let otherCards = otherCards as? [PlayingCard] else {
+      return 0
+    }
+    return getScore(forRank: rank, comparingToCards: otherCards) +
+      getScore(forSuit: suit, comparingToCards: otherCards)
   }
   
-  private func getScore(forSuit suit: String, comparingToCards cards: [Card]) -> Int {
+  private func getScore(forSuit suit: String, comparingToCards cards: [PlayingCard]) -> Int {
     var score = 0
     switch cards.count {
     case 1:
-      if (cards.first as? PlayingCard)?.suit == suit {
+      if cards.first?.suit == suit {
         score = CardMatchingBounses.twoSuits
       }
     case 2:
-      let firstOtherCard = cards.first as? PlayingCard, secondOtherCard = cards.last as? PlayingCard
-      if (suit == firstOtherCard?.suit) || (suit == secondOtherCard?.suit) {
+      guard let firstOtherCard = cards.first,
+        let secondOtherCard = cards.last else { break }
+      if suit == firstOtherCard.suit || suit == secondOtherCard.suit {
         score += CardMatchingBounses.twoSuitsInThreeCardMode
       }
-      if (firstOtherCard?.suit == secondOtherCard?.suit) {
+      if firstOtherCard.suit == secondOtherCard.suit {
         score = score != 0 ? CardMatchingBounses.threeSuits :
           CardMatchingBounses.twoSuitsInThreeCardMode
       }
@@ -85,19 +88,20 @@ class PlayingCard: Card {
     return score
   }
   
-  private func getScore(forRank rank: Int, comparingToCards cards: [Card]) -> Int {
+  private func getScore(forRank rank: Int, comparingToCards cards: [PlayingCard]) -> Int {
     var score = 0
     switch cards.count {
     case 1:
-      if (cards.first as? PlayingCard)?.rank == rank {
+      if cards.first?.rank == rank {
         score = CardMatchingBounses.twoRanks
       }
     case 2:
-      let firstOtherCard = cards.first as? PlayingCard, secondOtherCard = cards.last as? PlayingCard
-      if rank == firstOtherCard?.rank || rank == secondOtherCard?.rank {
+      guard let firstOtherCard = cards.first,
+        let secondOtherCard = cards.last else { break }
+      if rank == firstOtherCard.rank || rank == secondOtherCard.rank {
         score += CardMatchingBounses.twoRanksInThreeCardMode
       }
-      if firstOtherCard?.rank == secondOtherCard?.rank {
+      if firstOtherCard.rank == secondOtherCard.rank {
         score = score != 0 ? CardMatchingBounses.threeRanks :
           CardMatchingBounses.twoRanksInThreeCardMode
       }
@@ -106,13 +110,4 @@ class PlayingCard: Card {
     }
     return score
   }
-}
-
-struct CardMatchingBounses {
-  static let twoRanks = 8
-  static let twoRanksInThreeCardMode = 6
-  static let threeRanks = 18
-  static let twoSuits = 2
-  static let twoSuitsInThreeCardMode = 1
-  static let threeSuits = 8
 }

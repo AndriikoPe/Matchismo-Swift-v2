@@ -14,10 +14,10 @@ class Card: NSObject {
   var isChosen = false
   var isMatched = false
   
-  func match(_ otherCards: [Card]?) -> Int {
+  func match(_ otherCards: [Card]) -> Int {
     var score = 0
     
-    for card in otherCards ?? [] {
+    for card in otherCards {
       if (card.contents == contents) {
         score = 1
       }
